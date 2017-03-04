@@ -1,0 +1,12 @@
+<h3>Leaderboard</h3>
+<table style="margin: 0 auto;
+    border: 1px solid #535353;  
+    border-collapse:collapse;
+              ">
+    <th style="border:1px solid #535353; background-color: #82f5ff; color: black;">Name</th>
+    <th style="border:1px solid #535353; background-color: #82f5ff; color: black;">Score</th>
+    <tr style="border:1px solid #535353;" ng-repeat="x in vm.scores">
+        <td style="border:1px solid #535353; width:200px; padding:0.5em; color:{{x.Color}}">{{x.Name}}</td>
+        <td style="border:1px solid #535353; width:200px; color:{{x.Color}}" class="leaderBoardScore">{{x.AverageScore}}</td>
+    </tr>
+</table>

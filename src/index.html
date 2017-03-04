@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>fc-ngi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Base css, but you'll likely want to keep them -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+
+    <!-- Your custom files -->
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+    <link rel="stylesheet" href="css/ngDialog.css" type="text/css">
+    <link rel="stylesheet" href="css/ngDialog-theme-default.css" type="text/css">
+    <link rel="stylesheet" href="css/ng-rateit.css" type="text/css">
+<!--    <script src="http://192.168.2.50:8080/target/target-script-min.js#anonymous"></script>-->
+
+<!--    <script src="http://192.168.2.50:8080/target/target-script-min-js#browsersync"></script>-->
+    <script src="GMLIB/system.js"></script>
+    <script src="GMLIB/info.js"></script>
+    <!-- Uncomment libraries as you need them: -->
+    <!-- <script src="GMLIB/comm.js"></script> -->
+    <script src="GMLIB/io.js"></script>
+    <script src="GMLIB/media.js"></script>
+    <!-- <script src="GMLIB/monitor.js"></script> -->
+    <!-- <script src="GMLIB/nav.js"></script> -->
+    <!-- <script src="GMLIB/phone.js"></script> -->
+    <!-- <script src="GMLIB/ui.js"></script> -->
+    <!-- <script src="GMLIB/util.js"></script> -->
+    <!-- <script src="GMLIB/voice.js"></script> -->
+
+</head>
+
+<body ng-app="fc-ngi">
+    <div id="wrapper">
+        <div id="main" ng-controller="layout as vm">
+            <div ng-if="vm.isBusy" class="page-splash">
+                <fc-spinner fc-spinner-radius="40" fc-spinner-width="30"></fc-spinner>
+            </div>
+
+            <div ng-if="vm.showNavBar" class="nav" ng-controller="navbar as vm">
+                <div class="nav-content">
+                    <div class="nav-header"></div>
+                    <ul class="navigation">
+                        <li ng-repeat="route in vm.routes" ng-class="{'nav-selected': vm.isCurrent(route)}" alignment="center">
+                            <a href="#{{route.url}}">
+                                <img ng-show="!vm.isCurrent(route)" ng-src="{{route.config.settings.navImage}}" width="40px" height="40px" />
+                                <img ng-show="vm.isCurrent(route)" ng-src="{{route.config.settings.selectedImage}}" width="40px" height="40px" />
+<!--                                <span>{{route.config.settings.navString}}</span>-->
+                            </a>                            
+                                        
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div ng-if="vm.title === 'Summary'" id="leaderboard"><a href="#/leaderboard"><img src="images/leaderboard.png" alt="close"></a></div>
+            <div ng-if="vm.title === 'Leaderboard'" id="leaderboard"><a href="#/summary"><img src="images/summary.png" alt="close"></a></div>
+            <div ng-if="vm.title !== 'Splash'" id="close"><img src="images/close.png" ng-click="vm.closeApp()" alt="close"></div>
+            
+            <div class="view-content" ng-view></div>
+        </div>
+    </div>
+
+    <!-- Your app code: -->
+    <!--<script src="js/app.js"></script>-->
+
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/spin.min.js"></script>
+    <script src="scripts/Chart.min.js"></script>
+    <script src="scripts/angular-chart.min.js"></script>
+    <script src="scripts/angular-dialgauge.js"></script>
+    <script src="scripts/angular-sanitize.min.js"></script>
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/ngDialog.min.js"></script>
+    <script src="scripts/ng-rateit.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/common.js"></script>
+    <script src="app/config.js"></script>
+    <script src="app/config.routes.js"></script>
+    <script src="app/layout.js"></script>
+    <script src="app/navbar.js"></script>
+    <script src="app/directives/fcSpinner.js"></script>
+    <script src="app/services/scoring.js"></script>
+    <script src="app/services/profile.js"></script>
+    <script src="app/services/shutdown.js"></script>
+    <script src="app/services/nav.js"></script>
+
+    <script src="app/motion.js"></script>
+    <script src="app/rest.js"></script>
+    <script src="app/summary.js"></script>
+    <script src="app/splash.js"></script>
+    <script src="app/leaderboard.js"></script>
+</body>
+
+</html>

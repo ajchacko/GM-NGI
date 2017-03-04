@@ -1,0 +1,24 @@
+<img style="position: absolute; top:105px; left:50px; height:20px; width:20px;" src="/images/person.png">
+<div style="position: absolute; top:100px; left:100px; font-size: 24px;">CHRIS MCARTHUR</div>
+<div style="height:80px"></div>
+<div>
+    <div class="dg1" style="height:280px; width:280px; z-index: 1;">
+        <ng-dial-gauge scale-min="0" 
+                       scale-max={{vm.maxScore}}
+                       border-width="0" 
+                       ng-model=vm.score 
+                       bar-width="32"                   
+                       bar-color={{vm.gaugeColor}}
+                       angle="260" 
+                       rotate="180" 
+                       scale-minor-length="0" 
+                       scale-major-length="0" 
+                       line-cap="butt" 
+                       percent="false" 
+                       style="font-weight:100;width:150px;">
+        </ng-dial-gauge>    
+    </div>
+    <hr style="z-index: 2; position:absolute; top:371px; left:342px; width:115px; height: 1px; border:0; border-top: 1px solid #9b9b9b;">
+    <div style="z-index: 3; position: absolute; top:380px; font-size: 22px; left:367px">SCORE</div>
+    <hr style="z-index: 2; position:absolute; top:402px; left:325px; width:150px; height: 1px; border:0; border-top: 1px solid #9b9b9b;">
+</div>

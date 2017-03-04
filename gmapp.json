@@ -1,0 +1,13 @@
+{
+  "name":"WatchOut!",
+  "id":"93392258",
+  "version": "0.0.0",
+  "src": "src",
+  "dist": "dist",
+  "main": "index.html",
+  "icon": "Icon.png",
+  "developer": "FleetComplete",
+  "category": "Audio",
+  "type": "RemoteHigh",
+  "description": "Generated on 2/27/2017, 10:44:55 PM by ngi-sdk version "
+}
